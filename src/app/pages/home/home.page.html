@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ pageTitle | titlecase }}</ion-title>
+    <img class="img-logo" src="../../../assets/img/TeLLevoAPP_icon.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="../../../assets/img/herramientas.png" alt="">
+    <ion-card-header>
+
+    </ion-card-header>
+    <ion-card-content>La pagina está en construcción.</ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col routerLink="/about">
+        <ion-card>
+          <img src="../../../assets/img/equipo.png" alt="">
+          <ion-card-content>Equipo de Trabajo</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

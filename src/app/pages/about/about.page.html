@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>{{ pageTitle | titlecase }}</ion-title>
+      <img class="img-logo" src="../../../assets/img/TeLLevoAPP_icon.png" alt="">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-accordion-group expand="block" (click)="presentToast('top')">
+      
+      <ion-card>
+        <ion-card>
+          <img class="fotoPerfil" src="../../../assets/img/capystor.jpg" alt="">
+        </ion-card>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Victor Navarro</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">Analista Programador Computacional</div>
+          <br>
+          <div class="ion-padding" slot="content">vic.navarro@duocuc.cl</div>
+        </ion-accordion>
+      </ion-card>
+      <ion-card>
+        <ion-card>
+          <img class="fotoPerfil" src="../../../assets/img/flanzybara.webp" alt="">
+        </ion-card>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Cristian Ilic</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">Analista Programador Computacional</div>
+          <br>
+          <div class="ion-padding" slot="content">cr.ilic@duocuc.cl</div>
+        </ion-accordion>
+      </ion-card>
+      <ion-card>
+        <ion-card>
+          <img class="fotoPerfil" src="../../../assets/img/marsybara.jpg" alt="">
+        </ion-card>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Marcelo Aguilera</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">Analista Programador Computacional</div>
+          <br>
+          <div class="ion-padding" slot="content">marc.aguilera@duocuc.cl</div>
+        </ion-accordion>
+      </ion-card>
+      
+    </ion-accordion-group>
+  </ion-content>
