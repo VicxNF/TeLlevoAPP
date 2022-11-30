@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ pageTitle | titlecase }}</ion-title>
+    <img class="img-logo" src="../../../assets/img/TeLLevoAPP_icon.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background-image ion-padding">
+  
+  <h4>Convertidor de divisa</h4>    
+  <ion-item counter="true">
+      <ion-label  position="floating">Ingrese cantidad de CLP</ion-label>
+      <ion-input type="number" [(ngModel)] = "CLP"  maxlength="30"></ion-input>
+  </ion-item> 
+  <div class="CentradoBTO">
+   
+    
+      <ion-button color="success" id="bto_dolar" (click)="ConvertirDolar()">Dolar</ion-button>
+      <ion-button color="success" id="bto_euro" (click)="ConvertirEuro()">Euro</ion-button>
+      <ion-button color="success" (click)="ResetearCampo()" >Vaciar</ion-button>
+  </div>
+  <h5>Conversión:</h5>
+  <ion-item>
+      <ion-label>$ {{conversion}}</ion-label> 
+  </ion-item>
+
+  <h5>Valor Dolar/Euro</h5>
+  <ion-list>
+      <ion-item >
+          <ion-label>$ 1 {{Dolar?.codigo}} = ${{Dolar?.valor}}</ion-label> 
+      </ion-item>
+      <ion-item>
+          <ion-label>€ 1 {{Euro?.codigo}} = €{{Euro?.valor}}</ion-label> 
+      </ion-item>
+
+     
+  </ion-list>
+
+
+
+</ion-content>
+

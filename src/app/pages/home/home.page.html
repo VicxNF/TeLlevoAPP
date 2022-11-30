@@ -8,19 +8,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background-image">
   <ion-card>
-    <img src="../../../assets/img/herramientas.png" alt="">
     <ion-card-header>
-
+      <ion-card-title>Temperatura Actual</ion-card-title>
+      <ion-card-subtitle><weather-service  class="tamaño"></weather-service></ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>La pagina está en construcción.</ion-card-content>
   </ion-card>
+  <ion-col routerLink="/buscar-viaje">
+    <ion-card>
+      <img src="../../../assets/img/Te_llevo_app.png" alt="">
+      <ion-card-header>
+
+      </ion-card-header>
+      <ion-card-content>Viajes seguros, para estudiantes responsables</ion-card-content>
+    </ion-card>
+  </ion-col>
+  <ion-col routerLink="/coversor">
+    <ion-card>
+      <img src="../../../assets/img/money_converter.png" alt="">
+      <ion-card-header>
+
+      </ion-card-header>
+      <ion-card-content>Conversor de Dinero</ion-card-content>
+    </ion-card>
+  </ion-col>
   <ion-grid>
     <ion-row>
       <ion-col routerLink="/about">
         <ion-card>
-          <img src="../../../assets/img/equipo.png" alt="">
+          <img src="../../../assets/img/arte.png" alt="">
           <ion-card-content>Equipo de Trabajo</ion-card-content>
         </ion-card>
       </ion-col>

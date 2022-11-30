@@ -1,8 +1,8 @@
-<ion-content [fullscreen]="true">
+<ion-content class="background-image" [fullscreen]="true">
   <ion-card>
     <ion-card-tittle>
       <ion-label>
-        <h1>Bienvenido!</h1>
+        <h1>Login</h1>
         <img src="../../../assets/img/TeLlevoAPP.png" alt="">
       </ion-label>
     </ion-card-tittle>
@@ -14,18 +14,21 @@
       <ion-card-title>Login</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input type="usuario" [(ngModel)]="user.usuario" required placeholder="Usuario"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input pattern="^(?=\w*\d)\S{4,16}$" [(ngModel)]="user.pass" type="password" required></ion-input>
-        </ion-item>
-      <br>
-      <ion-button (click)="ingresar()">
-        Ingresar
-      </ion-button>
+      <form [formGroup]="credentials" (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="email" placeholder="Correo Electrónico" formControlName="email"></ion-input>
+            <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Email no válido</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+            <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">Password debe tener al menos 6 caracteres</ion-note>
+          </ion-item>
+        <br>
+        <ion-button expand="full" shape="block" type="submit" [disabled]="!credentials.valid">Iniciar Sesión</ion-button>
+        <ion-button expand="full" type="button" (click)="register()">Registrarse</ion-button>
+      </form>
     </ion-card-content>
   </ion-card>
 

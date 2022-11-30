@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { CoversorPageRoutingModule } from './coversor-routing.module';
 
-import { HomePage } from './home.page';
+import { CoversorPage } from './coversor.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { ServicesModule } from 'src/app/services/services.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    ComponentsModule,
-    ServicesModule
+    CoversorPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [HomePage]
+  declarations: [CoversorPage]
 })
-export class HomePageModule {}
+export class CoversorPageModule {}
