@@ -17,6 +17,7 @@ const apiClimaKey = environment.apiClimaKey;
 export class WeatherComponent implements OnInit {
   
   weatherTemp :any
+  weatherCity: any
   weatherDescription :any
   coordenadas :any
   latitud :any
@@ -41,6 +42,7 @@ export class WeatherComponent implements OnInit {
   loadData(){
       this.httpClient.get(`${apiClimaUrl}/weather?lat=${this.latitud}&lon=${this.longitud}&appid=${apiClimaKey}&units=metric`).subscribe(results =>{
       this.weatherTemp = results['main'];
+      this.weatherCity = results['name'];
       this.weatherDescription = results['weather'];
       this.weatherDescription = this.weatherDescription['0'];
     })
