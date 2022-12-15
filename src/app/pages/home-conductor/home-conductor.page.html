@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ pageTitle | titlecase }}</ion-title>
+    <img class="img-logo" src="../../../assets/img/TeLLevoAPP_icon.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-image">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Temperatura Actual</ion-card-title>
+      <ion-card-subtitle><app-weather></app-weather></ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <ion-col routerLink="/buscar-viaje">
+    <ion-card>
+      <img src="../../../assets/img/Te_llevo_app.png" alt="">
+      <ion-card-header>
+
+      </ion-card-header>
+      <ion-card-content>Viajes seguros, para estudiantes responsables</ion-card-content>
+    </ion-card>
+  </ion-col>
+  <ion-col routerLink="/coversor">
+    <ion-card>
+      <img src="../../../assets/img/money_converter.png" alt="">
+      <ion-card-header>
+
+      </ion-card-header>
+      <ion-card-content>Conversor de Dinero</ion-card-content>
+    </ion-card>
+  </ion-col>
+  <ion-grid>
+    <ion-row>
+      <ion-col routerLink="/about">
+        <ion-card>
+          <img src="../../../assets/img/arte.png" alt="">
+          <ion-card-content>Equipo de Trabajo</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
