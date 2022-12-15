@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{Auth} from '@angular/fire/auth';
+import {Auth} from '@angular/fire/auth';
 import { doc,docData, Firestore,setDoc } from '@angular/fire/firestore';
 import { Storage,ref,getDownloadURL,uploadString} from '@angular/fire/storage';
 import { Photo } from '@capacitor/camera';
@@ -30,7 +30,6 @@ export class PpictureService {
 
       try {
         await uploadString(storageRef, cameraFile.base64String || '' ,'base64');
-
         const imageUrl = await getDownloadURL(storageRef);
         const userDocRef = doc(this.firestore, `users/${user?.uid}`);
         await setDoc(userDocRef,{

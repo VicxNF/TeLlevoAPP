@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera } from '@capacitor/camera';
 import { CameraResultType, CameraSource } from '@capacitor/camera/dist/esm/definitions';
@@ -8,13 +8,15 @@ import { PpictureService } from './services/ppicture.service';
 import { User } from './services/user';
 import { UserService } from 'src/app/services/user.service';
 import { ModalController, ToastController } from '@ionic/angular';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-
+export class AppComponent{
+  
   user: User[]=[];
   profile=null
   public appPages = [
@@ -34,10 +36,12 @@ export class AppComponent {
     private loadingCtrl: LoadingController,
     private router:Router,
     private ppictureService:PpictureService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
     
    ) 
     {
+      defineCustomElements(window);
+
       this.ppictureService.getUserProfile().subscribe((data)=>{
         this.profile=data;
       });

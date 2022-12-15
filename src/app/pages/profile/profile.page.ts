@@ -12,6 +12,7 @@ import { ModalController, ToastController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -73,7 +74,6 @@ export class ProfilePage implements OnInit {
         resultType:CameraResultType.Base64,
         source:CameraSource.Camera //Photo o prompt
       });
-      console.log(ppicture);
   
       if(ppicture){
         const loading = await this.loadingCtrl.create();
@@ -112,9 +112,9 @@ export class ProfilePage implements OnInit {
     createForm(){
  
         this.profilecredentials = this.formbuilder.group({
-          email: [{value: '',  disabled: true}, [Validators.required,Validators.email]],
-          name: [ {value: ''}, [Validators.required]],
-          lastname: [ {value: ''}, [Validators.required]],
+          email: ['', [Validators.required,Validators.email]],
+          name: ['', [Validators.required]],
+          lastname: ['', [Validators.required]],
           gender: ['', Validators.required],
           address: ['', Validators.required],
           commune: ['', Validators.required],

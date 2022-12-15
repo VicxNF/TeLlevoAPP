@@ -8,13 +8,49 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="background-image" [fullscreen]="true">
-  <ion-card>
-    <img src="../../../assets/img/Alecive-Flatwoken-Apps-Google-Maps.svg" alt="">
-    <ion-card-header>
+<ion-header [translucent]="true">
 
-    </ion-card-header>
-    <ion-card-content>La pagina está en construcción.</ion-card-content>
-  </ion-card>
+  <ion-toolbar color="success">
+    <ion-button (click)="loadMap()" shape="round" color="dark">
+      <ion-icon slot="start" name="locate"></ion-icon>
+      Donde estoy?
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="map-wrapper">
+    <div #map id="map"></div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <b>Latitud</b>
+      </ion-col>
+      <ion-col>
+        {{latitude}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <b>Longitud</b>
+      </ion-col>
+      <ion-col>
+        {{longitude}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <b>Direcci&oacute;n</b>
+      </ion-col>
+      <ion-col>
+        {{address}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>
