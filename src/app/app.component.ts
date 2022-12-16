@@ -79,5 +79,11 @@ export class AppComponent{
       });
       await alert.present();
     }
+
+    cerrarSesion(title:string){
+      if (title == 'Cerrar sesión'){
+        this.authService.logout();
+      }
+    }
     
 }
