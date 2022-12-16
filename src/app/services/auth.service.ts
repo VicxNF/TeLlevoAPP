@@ -24,7 +24,7 @@ export class AuthService {
   updateUser(userInfo: Object) {
     console.log(userInfo)
     const user = this.auth.currentUser;
-    const userDocRef = doc(this.firestore, `usuarios/${user?.uid}`);
+    const userDocRef = doc(this.firestore, `users/${user?.uid}`);
     return setDoc(userDocRef, {
         name: userInfo['name'],
         lastname: userInfo['lastname'],

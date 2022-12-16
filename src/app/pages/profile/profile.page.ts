@@ -45,11 +45,10 @@ export class ProfilePage implements OnInit {
       this.createForm();
       
     }
-    
-    
+        
   
     getUserProfile(){
-      this.ppictureService.getUserProfile().subscribe((respuesta: any) => {
+      this.userService.getUserProfile().subscribe((respuesta: any) => {
         this.profile = respuesta;
         console.log(respuesta)
         this.fillForm();
@@ -62,7 +61,7 @@ export class ProfilePage implements OnInit {
     }
   
     cargarAvatar(){
-      this.ppictureService.getUserProfile().subscribe(respuesta => {
+      this.userService.getUserProfile().subscribe(respuesta => {
         this.profile = respuesta;
       })
     }

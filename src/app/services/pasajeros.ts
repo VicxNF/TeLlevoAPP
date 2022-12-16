@@ -5,4 +5,5 @@ export interface Pasajero {
     direccion:string;
     destino:string;
     tipodepago:string;
+    estado:string;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { collectionData, docData, Firestore } from '@angular/fire/firestore';
-import { addDoc, collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, updateDoc, query, where } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Pasajero } from './pasajeros';
 
@@ -13,7 +13,8 @@ export class PasajerosService {
 
   getPasajeros(): Observable<Pasajero[]> {
     const pasajeroRef = collection(this.firestore,'pasajeros');
-    return collectionData(pasajeroRef, {idField: 'id'}) as Observable<Pasajero[]>;
+    const queryRef = query(pasajeroRef,where('estado','==','pendiente'));
+    return collectionData(queryRef, {idField: 'id'}) as Observable<Pasajero[]>;
   }
 
   getPasajeroById(id:string): Observable<Pasajero>{
@@ -35,6 +36,7 @@ export class PasajerosService {
         direccion: pasajero.direccion,
         destino: pasajero.destino,
         tipodepago: pasajero.tipodepago,
+        estado: pasajero.estado
       });
   }
 

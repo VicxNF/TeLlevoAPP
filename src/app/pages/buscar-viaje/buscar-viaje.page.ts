@@ -157,7 +157,8 @@ export class BuscarViajePage implements OnInit {
         {
           text:'Buscar Viaje',
           role:'confirm',
-          handler: (data) => {
+          handler: (data: Pasajero) => {
+            data.estado = 'pendiente';
             this.pasajeroService.addPasajero(data);
             this.toastPresent('Solicitud enviada, espere confirmación.'); 
           }
