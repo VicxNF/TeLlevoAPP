@@ -22,7 +22,6 @@ export class AppComponent{
   public appPages = [
     { title: 'Inicio', url: '/home', icon: 'home' },
     { title: 'Perfil', url: '/profile', icon: 'person' },
-    { title: 'Buscar Viaje', url: '/buscar-viaje', icon: 'car' },
     { title: 'Conversor', url: '/coversor', icon: 'cube' },
     { title: 'Acerca de ...', url: '/about', icon: 'information-circle' },
     { title: 'Cerrar sesión', url: '/login', icon: 'log-out' },

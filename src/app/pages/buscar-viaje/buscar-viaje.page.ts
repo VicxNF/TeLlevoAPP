@@ -5,7 +5,7 @@ import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@io
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { Pasajero } from 'src/app/services/pasajeros';
 import { PasajerosService } from 'src/app/services/pasajeros.service';
-import { ModalPage } from '..modal/modal.page' 
+import { ModalPage } from '../modal/modal.page' 
 
 declare var google;
 

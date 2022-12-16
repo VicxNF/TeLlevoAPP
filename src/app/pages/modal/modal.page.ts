@@ -29,13 +29,13 @@ export class ModalPage implements OnInit {
   async updatePasajero(){
     this.pasajerosService.updatePasajero(this.pasajero);
     this.modalCtrl.dismiss();
-    this.toastPresent('Person updated!!!!');
+    this.toastPresent('Viaje aceptado');
   }
 
   async deletePasajero() {
     this.pasajerosService.deletePasajero(this.pasajero);
     this.modalCtrl.dismiss();
-    this.toastPresent('Person   !!!!');
+    this.toastPresent('Viaje cancelado');
   }
 
   async toastPresent(message:string){
