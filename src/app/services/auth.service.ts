@@ -31,7 +31,6 @@ export class AuthService {
         email: userInfo['email'],
         gender: userInfo['gender'],
         address: userInfo['address'],
-        commune: userInfo['commune'],
         region: userInfo['region'],
         campus: userInfo['campus']
       }, { merge: true })

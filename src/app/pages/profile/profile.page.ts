@@ -101,11 +101,7 @@ export class ProfilePage implements OnInit {
     get address(){
       return this.profilecredentials?.get('address');
     }
-  
-    get commune(){
-      return this.profilecredentials?.get('commune');
-    }
-  
+    
     get region(){
       return this.profilecredentials?.get('region');
     }
@@ -117,7 +113,6 @@ export class ProfilePage implements OnInit {
           lastname: ['', [Validators.required]],
           gender: ['', Validators.required],
           address: ['', Validators.required],
-          commune: ['', Validators.required],
           region: ['', Validators.required],
           campus: ['', Validators.required],
         });
@@ -138,7 +133,6 @@ export class ProfilePage implements OnInit {
         lastname: this.profile?.lastname,
         gender: this.profile?.gender,
         address: this.profile?.address,
-        commune: this.profile?.commune,
         region: this.profile?.region,
         campus: this.profile?.campus,
         car: this.profile?.car,
